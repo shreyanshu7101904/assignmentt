@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<table class="table">
+  <tr>
+    <th scope="col" >Inventory Name</th>
+    <th scope="col" >Availability</th>
+    <th scope="col">Supplier</th>
+    <th scope="col">Details</th>
+  </tr>
+  {% for obj in object_list %}
+  <tr>
+    <td scope="row" >{{ obj.name}}</td>
+    <td>{{ obj.availability}}</td>
+    <td>{{ obj.supplied_by }}</td>
+    <td><a href="{% url 'inventory-detail' obj.pk%}"> Show details</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+
+{% endblock %}

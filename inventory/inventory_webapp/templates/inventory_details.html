@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<table class="table">
+  <tr>
+    <th scope="col" >Field</th>
+    <th scope="col" >Value</th>
+  </tr>
+  <tr>
+    <td scope="row" >Id</td>
+    <td>{{object.pk}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >Name</td>
+    <td>{{object.name}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >Description</td>
+    <td>{{object.description}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >Notes</td>
+    <td>{{object.note}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >stock</td>
+    <td>{{object.stock}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >Available</td>
+    <td>{{object.availability}}</td>
+  </tr>
+  <tr>
+    <td scope="row" >Supplier</td>
+    <td>{{object.supplied_by.name}}</td>
+  </tr>
+</table>
+
+
+{% endblock %}
