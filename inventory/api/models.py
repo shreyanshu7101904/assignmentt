@@ -7,6 +7,11 @@ class BaseModel(models.Model):
     created = models.DateTimeField(auto_now_add=True, blank=True)
     updated = models.DateTimeField(auto_now=True, blank=True)
 
+    def __str__(self):
+        if hasattr(self, 'name'):
+            return self.name
+        else:
+            return self.created
 
 class Supplier(BaseModel):
     """Supplier model"""
